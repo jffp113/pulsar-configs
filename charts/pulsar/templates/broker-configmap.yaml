@@ -90,6 +90,7 @@ data:
   PF_kubernetesContainerFactory_changeConfigMap: "{{ template "pulsar.fullname" . }}-{{ .Values.functions.component }}-config"
   PF_kubernetesContainerFactory_changeConfigMapNamespace: {{ template "pulsar.namespace" . }}
   {{- end }}
+  PF_stateStorageServiceUrl: "bk://pulsar-mini-bookie:4181"
 
   # prometheus needs to access /metrics endpoint
   webServicePort: "{{ .Values.broker.ports.http }}"

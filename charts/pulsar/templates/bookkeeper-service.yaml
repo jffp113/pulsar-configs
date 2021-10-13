@@ -36,6 +36,8 @@ spec:
     port: {{ .Values.bookkeeper.ports.bookie }}
   - name: http
     port: {{ .Values.bookkeeper.ports.http }}
+  - name: stream
+    port: 4181
   clusterIP: None
   selector:
     {{- include "pulsar.matchLabels" . | nindent 4 }}

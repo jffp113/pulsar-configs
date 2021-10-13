@@ -17,9 +17,11 @@
 # under the License.
 #
 
+namespaceCreate: false
+
 ## deployed withh emptyDir
 volumes:
-  persistence: false
+  persistence: true
 
 # disabled AntiAffinity
 affinity:
@@ -28,15 +30,16 @@ affinity:
 # disable auto recovery
 components:
   autorecovery: false
+  functions: true
 
 zookeeper:
-  replicaCount: 1
+  replicaCount: 2
 
 bookkeeper:
-  replicaCount: 1
+  replicaCount: 3
 
 broker:
-  replicaCount: 1
+  replicaCount: 2
   configData:
     ## Enable `autoSkipNonRecoverableData` since bookkeeper is running
     ## without persistence

@@ -28,5 +28,6 @@ metadata:
     {{- include "pulsar.standardLabels" . | nindent 4 }}
     component: {{ .Values.functions.component }}
 data:
+  stateStorageServiceUrl: bk://pulsar-mini-bookie:4181
   pulsarDockerImageName: "{{ .Values.images.functions.repository }}:{{ .Values.images.functions.tag }}"
 {{- end }}

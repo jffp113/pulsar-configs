@@ -27,6 +27,7 @@ metadata:
     {{- include "pulsar.standardLabels" . | nindent 4 }}
     component: {{ .Values.bookkeeper.component }}
 data:
+  extraServerComponents: "org.apache.bookkeeper.stream.server.StreamStorageLifecycleComponent"
   # common config
   {{- include "pulsar.bookkeeper.config.common" . | nindent 2 }}
   {{- if .Values.components.autorecovery }}
